@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Mail, Github, Linkedin, ArrowRight } from "lucide-react";
-import { getSortedPostsData } from "@/lib/posts"; // 记得确保 lib/posts.ts 存在
+import { getSortedPostsData } from "@/lib/posts";
 
 export default function Home() {
   const allPosts = getSortedPostsData();
@@ -8,18 +8,18 @@ export default function Home() {
 
   return (
     <div className="max-w-3xl mx-auto px-6 py-12 md:py-20 space-y-16">
-      {/* Hero Section */}
+      {/* Brief Introduction Section */}
       <section className="space-y-6">
-        <h1 className="text-3xl font-semibold tracking-tight">Neal.</h1>
+        <h1 className="text-3xl font-semibold tracking-tight">Neal's Life Gallery</h1>
         <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 max-w-2xl">
-          I am a Senior Frontend Engineer and UI/UX Designer specializing in building high-performance, accessible, and minimalist web architectures.
+          I am passionate about technology, especially in the realms of AI, Deep Learning, and Large Language Models (LLMs). I hold a Master’s degree in Electrical and Computer Engineering (ECE) from Carnegie Mellon University, where I focused on these cutting-edge fields.
         </p>
         
         {/* Social Links */}
         <div className="flex flex-wrap gap-5 pt-2">
-          <SocialLink href="mailto:your@email.com" icon={<Mail size={20} />} label="Email" />
-          <SocialLink href="[https://github.com/CardinalNeal](https://github.com/CardinalNeal)" icon={<Github size={20} />} label="GitHub" />
-          <SocialLink href="#" icon={<Linkedin size={20} />} label="LinkedIn" />
+          <SocialLink href="yichenz3@alumni.cmu.edu" icon={<Mail size={23} />} label="Email" />
+          <SocialLink href="[https://github.com/CardinalNeal](https://github.com/CardinalNeal)" icon={<Github size={23} />} label="GitHub" />
+          <SocialLink href="#" icon={<Linkedin size={23} />} label="LinkedIn" />
         </div>
       </section>
 
