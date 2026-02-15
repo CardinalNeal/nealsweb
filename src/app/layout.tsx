@@ -19,7 +19,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      {/* 在这里添加背景色和文字颜色的类名 */}
+      <body className={`${inter.className} bg-white dark:bg-[#1d1e20] text-[#1a1a1a] dark:text-[#e5e5e5] transition-colors duration-300 antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Navbar />
           <main className="min-h-screen">
