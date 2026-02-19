@@ -1,1 +1,13 @@
 @import "tailwindcss";
+
+@config "../../tailwind.config.ts";
+
+/* 3. 如果你需要引入 typography 插件 (v4 方式) 
+  注意：由于你在 config.ts 里已经 require 了，这里通常不需要再写，
+  但如果排版插件失效，可以取消下一行的注释
+*/
+/* @plugin "@tailwindcss/typography"; */
+
+@layer base {
+  /* 全局基础样式可以在这里补充，但通常你的 layout.tsx 已经处理好了 */
+}

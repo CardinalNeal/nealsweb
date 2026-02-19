@@ -15,13 +15,18 @@ const NAV_ITEMS = [
 ];
 
 export default function Navbar() {
-  const { theme, setTheme } = useTheme();
+  const {theme, setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
 
   // 避免服务端渲染的水合不匹配
   useEffect(() => setMounted(true), []);
+
+  const toggleTheme = () => {
+    // 如果当前是 dark，就切 light；反之亦然
+    setTheme(resolvedTheme === "dark" ? "light" : "dark");
+  };
 
   return (
     <header className="sticky top-0 z-50 bg-white/80 dark:bg-[#1d1e20]/80 backdrop-blur-md border-b border-gray-100 dark:border-gray-800/50">
