@@ -19,7 +19,7 @@ export function getSortedPostsData() {
 
     return {
       slug,
-      ...(data as { title: string; date: string; summary: string }),
+      ...(data as { title: string; date: string; summary: string; tags?: string[] }),
     };
   });
 
@@ -33,6 +33,6 @@ export function getPostData(slug: string) {
   return {
     slug,
     content,
-    ...(data as { title: string; date: string; summary: string }),
+    ...(data as { title: string; date: string; summary: string; tags?: string[] }),
   };
 }

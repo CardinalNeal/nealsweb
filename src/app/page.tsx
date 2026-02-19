@@ -11,10 +11,21 @@ export default function Home() {
       {/* Brief Introduction Section */}
       <section className="space-y-6">
         <h1 className="text-3xl font-semibold tracking-tight">Neal's Life Gallery</h1>
-        <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 max-w-2xl">
-          I am passionate about technology, especially in the realms of AI, Deep Learning, and Large Language Models (LLMs). I hold a Master’s degree in Electrical and Computer Engineering (ECE) from Carnegie Mellon University, where I focused on these cutting-edge fields.
-        </p>
-        
+
+        <div className="space-y-4">
+          {/* 职业头衔 */}
+          <p className="text-xl font-medium text-gray-800 dark:text-gray-200">
+            Vice President, Intelligent Manufacturing
+          </p>
+          
+          {/* 个人简介 Hook */}
+          <p className="text-lg leading-relaxed text-gray-600 dark:text-gray-400 max-w-2xl">
+            I am passionate about technology, especially in the realms of AI, Deep Learning, and Large Language Models (LLMs). I hold a Master’s degree in Electrical and Computer Engineering (ECE) from Carnegie Mellon University, where I focused on these cutting-edge fields.
+            <br className="hidden md:block" />
+            Documenting my journey in engineering leadership and personal growth.
+          </p>
+        </div>
+
         {/* Social Links */}
         <div className="flex flex-wrap gap-5 pt-2">
           <SocialLink href="yichenz3@alumni.cmu.edu" icon={<Mail size={23} />} label="Email" />
@@ -48,6 +59,18 @@ export default function Home() {
                   <span className="w-1 h-1 rounded-full bg-gray-300 dark:bg-gray-700"></span>
                   <span>{post.summary}</span>
                 </div>
+                {post.tags && post.tags.length > 0 && (
+                    <div className="flex flex-wrap gap-2 mt-3">
+                      {post.tags.map(tag => (
+                        <span 
+                          key={tag} 
+                          className="text-[10px] uppercase tracking-wider font-medium px-2 py-0.5 rounded-md bg-gray-100 text-gray-600 dark:bg-gray-800 dark:text-gray-400 border border-gray-200 dark:border-gray-700/50"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
               </Link>
             </article>
           ))}
